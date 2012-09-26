@@ -1,14 +1,28 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:onClick="@string/title_activity_main" >
 
-    <TextView
+    <Button
+        android:id="@+id/settingsButton"
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_world"
-        tools:context=".MainActivity" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:onClick="openSettings"
+        android:text="@string/settings" />
+
+    <Button
+        android:id="@+id/feedMeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/settingsButton"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="90dp"
+        android:layout_toLeftOf="@+id/settingsButton"
+        android:text="Feed me!" />
 
 </RelativeLayout>
