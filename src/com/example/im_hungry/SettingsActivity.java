@@ -23,4 +23,5 @@ public class SettingsActivity extends Activity {
 //    	i.setClass(this, )
 //    	
 //    }
+    
 }
