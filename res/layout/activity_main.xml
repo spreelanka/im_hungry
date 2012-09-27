@@ -1,8 +1,13 @@
+<!--  this crashes it. i'm not sure why, but i'm fairly sure it's needed and 
+		I broke something else-->
+<!-- android:onClick="@string/title_activity_main" -->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="@string/title_activity_main" >
+    
+     >
 
     <Button
         android:id="@+id/settingsButton"
@@ -23,6 +28,17 @@
         android:layout_marginLeft="51dp"
         android:layout_marginTop="90dp"
         android:layout_toLeftOf="@+id/settingsButton"
+        android:onClick="onFeedMeButtonClick"
         android:text="Feed me!" />
+
+    <TextView
+        android:id="@+id/yelpResultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/feedMeButton"
+        android:layout_below="@+id/feedMeButton"
+        android:layout_marginTop="99dp"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
