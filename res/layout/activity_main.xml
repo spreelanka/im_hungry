@@ -1,13 +1,10 @@
 <!--  this crashes it. i'm not sure why, but i'm fairly sure it's needed and 
 		I broke something else-->
 <!-- android:onClick="@string/title_activity_main" -->
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    
-     >
+    android:layout_height="match_parent" >
 
     <Button
         android:id="@+id/settingsButton"
@@ -17,17 +14,14 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:onClick="openSettings"
-        android:text="@string/settings" />
+        android:text="settings" />
 
     <Button
         android:id="@+id/feedMeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/settingsButton"
-        android:layout_marginLeft="51dp"
-        android:layout_marginTop="90dp"
-        android:layout_toLeftOf="@+id/settingsButton"
+        android:layout_alignParentTop="true"
         android:onClick="onFeedMeButtonClick"
         android:text="Feed me!" />
 
@@ -35,9 +29,10 @@
         android:id="@+id/yelpResultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/feedMeButton"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/feedMeButton"
-        android:layout_marginTop="99dp"
+        android:layout_marginTop="26dp"
+        android:maxLines="25"
         android:text="Large Text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 

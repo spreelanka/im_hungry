@@ -86,10 +86,20 @@ public class MainActivity extends Activity {
     	startActivity(i);
     }
 	
+	public void openMapRestaurant(View v){
+		openMapRestaurant();
+    }
 	
-	public class YelpResultsTask extends AsyncTask<Void, Integer, Boolean> {
+	public void openMapRestaurant(){
+    	Intent i=new Intent();
+    	i.setClass(this, MapRestaurantActivity.class);
+    	startActivity(i);
+    }
+	
+	
+	public class YelpResultsTask extends AsyncTask<Void, Integer, String> {
 		@Override
-		protected Boolean doInBackground(Void... junk) {
+		protected String doInBackground(Void... junk) {
 			//TODO: move yelp auth stuff somewhere better
 			YelpAuthInfo auth_info= new YelpAuthInfo("mWYLNzQlV1jHxOWL9BCK3A",//consumerKey
 					"zF5zKAg419WATpzlR4yGY7iVqWM",//consumerSecret
@@ -104,21 +114,23 @@ public class MainActivity extends Activity {
 	        try{
 	        	String response = yelp.search("burritos", 30.361471, -87.164326);
 	        	if(response!=null && response.length()>0){
-	        		return true;
+	        		return response;
 	        	}
 	        } catch (IllegalStateException e){
 	        	//maybe do something here...
 	        }
 
-			return false;
+			return null;
 		}
 		
 		@Override
-		protected void onPostExecute(Boolean result) {
+		protected void onPostExecute(String result) {
 			// TODO Auto-generated method stub
 			super.onPostExecute(result);
-			if(result){
-				MainActivity.this.setYelpResultTextView("got something from yelp");
+			if(result != null && result.length()>0){
+				MainActivity.this.setYelpResultTextView(result);
+//						"got something from yelp");
+				MainActivity.this.openMapRestaurant();
 			}else{
 				MainActivity.this.setYelpResultTextView("got NOTHING");
 			}
